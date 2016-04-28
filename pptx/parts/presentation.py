@@ -129,6 +129,11 @@ class _Slides(object):
         self._sldIdLst.add_sldId(rId)
         return slide
 
+    def del_slide(self, presentation, index):
+        xml_slides = presentation.slides._sldIdLst
+        slides = list(xml_slides)
+        xml_slides.remove(slides[index])
+
     def index(self, item):
         """
         Map *item* to an integer representing its zero-based position in this
